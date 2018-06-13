@@ -1,6 +1,6 @@
 {
   "name": "webdev_ha07",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "description": "*run node server on terminal  *listen on localhost: 3000 *write your own article",
   "main": "server.js",
   "scripts": {
