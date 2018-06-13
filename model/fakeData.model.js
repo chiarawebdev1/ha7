@@ -1,0 +1,68 @@
+const faker = require('faker');
+
+module.exports = [
+  {
+    id: 0,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/800",
+  },
+  {
+    id: 1,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/801",
+  },
+  {
+    id: 2,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/901",
+  },
+  {
+    id: 3,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/1200",
+  },
+  {
+    id: 4,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/1023",
+  },
+  {
+    id: 5,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/900/",
+  },
+  {
+    id: 6,
+    title: faker.lorem.sentences(1),
+    teaser: faker.lorem.sentences(3),
+    articletext: faker.lorem.sentences(20),
+    author: faker.internet.userName(),
+    published: faker.date.recent(),
+    image: "https://picsum.photos/1109/",
+  },
+  
+]

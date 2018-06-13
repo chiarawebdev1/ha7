@@ -1,0 +1,46 @@
+.card .card-image img {
+  max-height: 600px;
+}
+
+b {
+  float: right;
+}
+
+p {
+  margin-top: 15px;
+}
+
+.card-content {
+ min-height: 220px;
+}
+
+.search-i {
+  color: grey !important;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.warning {
+  color: orange;
+  font-style: italic;
+}
+
+.hide {
+  display: none;
+}
+
+#error-meldung {
+  background-color: rgb(252, 90, 90);
+  color: white;
+  font-style: italic;
+  width: 20%;
+  height: 14px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 2%;
+}
+
