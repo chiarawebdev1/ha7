@@ -1,50 +1,72 @@
-document.querySelector('.btn').addEventListener('click',(e) => {
-  e.preventDefault();
- 
- const title = document.getElementById('title');
- const titleHelperClassList = title.nextSibling.nextSibling.classList;
-
- const teaser = document.getElementById('teaser');
- const teaserHelperClassList = teaser.nextSibling.nextSibling.classList;
-
- const articleText = document.getElementById('articletext');
- const articleTextHelperClassList = articleText.nextSibling.nextSibling.classList;
-
- const author = document.getElementById('author');
- const authorHelperClassList = author.nextSibling.nextSibling.classList;
-
-
- //Fehler: Der Titel muss mehr als drei und weniger als elf Worte haben.
- if (title) {
-   titleHelperClassList.remove('hide');
- } else if (!titleHelperClassList.contains('hide')){
-   titleHelperClassList.add('hide');
+const errorMessage = () => {
+  const errorPromt = document.getElementById('error-meldung').classList;
+  errorPromt.remove('hide');
+  setTimeout(() => {
+    errorPromt.add('hide');
+  }, 3000)
  }
 
- //Fehler: Der Teaser soll nicht mehr als 250 Zeichen und nicht weniger als 50 Zeichen haben.
- if (teaser.value.length > 250 || teaser.value.length < 50) {
-   teaserHelperClassList.remove('hide');
- } else if (!teaserHelperClassList.contains('hide')){
-   teaserHelperClassList.classList.add('hide');
- }
+const formValidation = (element, id, min, max) => {
+  let value;
+  let error;
 
- //Fehler: Autor darf nicht leer sein.
- if (author.value == '') {
-   authorHelperClassList.remove('hide');
- } else if (!authorHelperClassList.contains('hide')){
-   authorHelperClassList.add('hide');
- }
+  switch (id) {
+      case 'title':
+          value = element.split(' ').length;
+          error = 'Word count';
+          break;
+      case 'teaser':
+          value = element.length;
+          error = 'Characters';
+          break;
+      case 'text':
+          value = element.split(' ').length;
+          error = 'Word count';
+          break;
+      case 'author':
+          value = element.length;
+          error = 'Author';
+          break;
+  }
 
- // Allgemeine Fehlermeldung die nach 3s wieder verschwindet
- const errorHandling = () => {
-   const errorMassege = document.getElementById('error-meldung').classList;
-   errorMassege.remove('hide');
-   setTimeout(() => {
-     errorMassege.add('hide');
-   }, 3000)
- }
- errorHandling();
+  if (value <= min && min === 0) {
+      document.querySelector(`.${id}-error`).textContent = `${error} needs to be set!`;
+      return 1;
+  }
+  if (value <= min && min !== -1) {
+      document.querySelector(`.${id}-error`).textContent = `${error} needs to be higher than ${min}!`;
+      return 1;
+  }
+  if (value >= max && max !== -1) {
+      document.querySelector(`.${id}-error`).textContent = `${error} needs to be less than ${max}!`;
+      return 1;
+  }
+  document.querySelector(`.${id}-error`).textContent = '';
+  return 0;
+}
 
+  document.querySelector('.btn').addEventListener('click',(e) => {
+    e.preventDefault();
+    let errorCounter = 0;
+    let articleTitleValue = document.getElementById('title').value;
+    let articleTeaserValue = document.getElementById('teaser').value;
+    let articleAuthorValue = document.getElementById('author').value;
 
- 
-});
+    errorCounter += formValidation(articleTitleValue, 'title', 3, 11);
+    errorCounter += formValidation(articleTeaserValue, 'teaser', 50, 250);
+    errorCounter += formValidation(articleAuthorValue, 'author', 0, -1);
+
+    if (errorCounter === 0) {
+        let form = document.querySelector('form');
+          form.submit();
+    } else {
+        errorMessage();
+      }
+    });
+
+  document.getElementById('articletext').addEventListener('keydown',(e) => {
+    let articleTextValue = document.getElementById('articleText').value;
+    let errorCounter = 0;
+      errorCounter += formValidation(articleTextValue, 'text', 30, -1);
+    });
+

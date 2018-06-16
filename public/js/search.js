@@ -10,7 +10,7 @@ function getData () {
   });
 }
 
-// Fill the allTitleWords Array with all the splited words from each title
+// Fill the allTitleWords Array with all the splitted words from each title
 function createTitleWordsArray (array) {
   // PREFIX: 
   allTitleWords = [];
