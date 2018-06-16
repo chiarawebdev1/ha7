@@ -1,5 +1,5 @@
 const Handlebars = require('handlebars');
-const oldFakeData = require('../model/fakeData.model').sortedData;
+const oldFakeData = require('../model/fakeData.model');
 const articlesTemplate = require('../view/articles.template');
 
 let searchController = (req,res) => {
