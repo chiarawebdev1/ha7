@@ -1,0 +1,33 @@
+/* GENERAL */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+form { padding: 20px 0 0 0; }
+form input { padding: 10px 15px; width: 100%; margin: 0 0 15px 0; }
+
+/* CLASSES */
+
+.container {
+	width: 400px;
+	margin: 50px auto 0 auto;
+	font-family: sans-serif;
+}
+
+/* articles */
+
+.articles .title { font-weight: 400; }
+.articles .author { color: #028166; }
+.articles { padding: 20px 0; }
+.articles ul { list-style-type: none; }
+.articles li { margin: 0 0 10px 0; }
+
+
+/* navigation */
+
+.nav ul {	list-style-type: none; margin: 0 0 40px 0; }
+.nav li { padding: 10px 15px; margin-right: 10px; border: solid 1px #333; border-radius: 3px; display: inline-block; cursor: pointer; }
+.nav li:hover { color: #028166; }

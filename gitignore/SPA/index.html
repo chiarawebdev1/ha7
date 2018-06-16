@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SPA</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+	<script src="router.js"></script>
+	<script src="template.js"></script>
+
+	<script id="template-list" type="application/x-handlebars-template">
+		<h1>{{title}}</h1>
+		<div class="articles">
+			<ul>
+				{{#each articles}}
+				<li>
+					<p class="title">{{title}}</p>
+					<p class="author">by {{author}}</p>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</script>
+
+	<script id="template-new" type="application/x-handlebars-template">
+		<h1>{{title}}</h1>
+		<div class="form">
+			<form action="http://localhost:3000/spa-new" enctype="multipart/form-data" method="POST" class="add-new-article">
+				<input type="text" name="title" id="title" placeholder="Title" required>
+				<input type="text" name="author" id="author" placeholder="Author" required>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</script>
+
+</head>
+<body>
+
+<div class="container">
+	<nav class="nav">
+		<ul>
+			<li class="nav-item list">List</li>
+			<li class="nav-item new">New article</li>
+		</ul>
+	</nav>
+
+	<main></main>
+</div>
+
+	<script src="app.js"></script>
+</body>
+</html>

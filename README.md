@@ -1,5 +1,7 @@
-#HA07 web development 
+# HA08 web development 
 
-*run node server on terminal 
-*listen on localhost: 3000
-*write your own article 
+## server.js
+
+Install dependencies with **"npm install"** 
+Start server on terminal with **"node server"**
+Navigate to **localhost:3000**
